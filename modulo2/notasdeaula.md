@@ -8,3 +8,7 @@
 # git add .
 ** adiciona todos os arquivos para a esteira de comite**
 
+##adicionar um arquivo em especifico**
+
+
+## git commit 
