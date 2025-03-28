@@ -1,0 +1,58 @@
+import pandas as pd
+
+
+# Carregar os dados
+file_path = "desafio_netflix/netflix_titles_nov_2019.csv"
+
+df = pd.read_csv(file_path)
+
+print(df.columns)
+
+
+# 1. Exploração Inicial
+# print("Dimensões do dataset:", df.shape)
+# print("\nTipos das variáveis:\n", df.dtypes)
+# print("\nValores ausentes:\n", df.isnull().sum())
+
+# # 2. Análises de Frequência
+# proporcao_tipo = df["type"].value_counts(normalize=True) * 100
+# print("\nProporção de Filmes vs. Séries:\n", proporcao_tipo)
+
+# genero_mais_frequente = df["listed_in"].value_counts().idxmax()
+# print("\nGênero mais frequente:", genero_mais_frequente)
+
+# # 3. Análises Estatísticas
+# def converter_duracao(valor):
+#     if isinstance(valor, str):
+#         return int(valor.split()[0])
+#     return None
+
+# df["duration_min"] = df["duration"].apply(converter_duracao)
+
+# print("\nMédia da duração dos filmes:", df["duration_min"].mean())
+# print("Mediana da duração dos filmes:", df["duration_min"].median())
+# print("Moda da duração dos filmes:", df["duration_min"].mode()[0])
+
+# filme_mais_curto = df.loc[df["duration_min"].idxmin(), "title"]
+# filme_mais_longo = df.loc[df["duration_min"].idxmax(), "title"]
+# print("\nFilme mais curto:", filme_mais_curto)
+# print("Filme mais longo:", filme_mais_longo)
+
+# # 4. Visualização de Dados
+# plt.figure(figsize=(10, 5))
+# sns.countplot(y=df["listed_in"], order=df["listed_in"].value_counts().index[:10])
+# plt.title("Top 10 Gêneros mais Frequentes")
+# plt.xlabel("Quantidade")
+# plt.ylabel("Gênero")
+# plt.show()
+
+# plt.figure(figsize=(10, 5))
+# sns.histplot(df["duration_min"].dropna(), bins=30, kde=True)
+# plt.title("Distribuição da Duração dos Filmes")
+# plt.xlabel("Duração (min)")
+# plt.ylabel("Frequência")
+# plt.show()
+
+# # Atividade Extra
+# paises_mais_producoes = df["country"].value_counts().head(5)
+# print("\nTop 5 Países com mais Produções:\n", paises_mais_producoes)
